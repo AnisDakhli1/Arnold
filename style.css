@@ -97,6 +97,7 @@ nav {
 .cta-button:hover {
     background-color: #ffcc4d;
     transform: translateY(-3px);
+
 }
 
 .container {
@@ -150,10 +151,27 @@ nav {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    transform: translateX(-100px); /* Start off to the left */
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.bio-image.show {
+    transform: translateX(0); /* Move to normal position */
+    opacity: 1;
+}
+
+/* For images on the right side (even sections) */
+.bio-section:nth-child(even) .bio-image {
+    transform: translateX(100px); /* Start off to the right */
+}
+
+.bio-section:nth-child(even) .bio-image.show {
+    transform: translateX(0);
 }
 
 .bio-image:hover {
-    transform: translateY(-10px);
+    transform: translateX(-10px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -298,6 +316,10 @@ footer {
 
 .social-icons a:hover {
     color: #f8bf3c;
+}
+
+.realisation{
+    color: yellow;
 }
 
 @media screen and (max-width: 768px) {
