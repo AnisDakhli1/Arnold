@@ -92,3 +92,45 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the bio image animation
     animateBioImages();
 });
+// Add this to your existing Intersection Observer code
+const animateTimeline = function() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    if ('IntersectionObserver' in window) {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    // Remove this line if you don't want items to reset when scrolling up
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, observerOptions);
+        
+        timelineItems.forEach(item => {
+            timelineObserver.observe(item);
+        });
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        function checkTimelineItems() {
+            timelineItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                if (itemTop < window.innerHeight * 0.75) {
+                    item.classList.add('show');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkTimelineItems);
+        checkTimelineItems(); // Initial check
+    }
+};
+
+// Initialize the timeline animation
+animateTimeline();
