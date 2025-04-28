@@ -1,339 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnold Schwarzenegger Biography</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Biographie d'Arnold Schwarzenegger</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #222;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: #fff;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
-        }
-
-        .nav-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: #f8bf3c;
-        }
-
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/800') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 0 1rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: #f8bf3c;
-            color: #333;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #ffcc4d;
-            transform: translateY(-3px);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: #333;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background-color: #f8bf3c;
-        }
-
-        .bio-section {
-            padding: 5rem 0;
-            scroll-margin-top: 5rem;
-        }
-
-        .bio-section:nth-child(even) {
-            background-color: #fff;
-        }
-
-        .bio-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-
-        .bio-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .bio-image:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .bio-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .bio-text {
-            flex: 2;
-            min-width: 300px;
-        }
-
-        .bio-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #444;
-        }
-
-        .bio-text p {
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        .read-more {
-            display: inline-block;
-            color: #f8bf3c;
-            font-weight: bold;
-            text-decoration: none;
-            padding: 0.5rem 0;
-            position: relative;
-        }
-
-        .read-more::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #f8bf3c;
-            transition: width 0.3s;
-        }
-
-        .read-more:hover::after {
-            width: 100%;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 0;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #ddd;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -13px;
-            background-color: #f8bf3c;
-            border: 4px solid #f8bf3c;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -16px;
-        }
-
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline-content h3 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        footer {
-            background-color: #222;
-            color: #fff;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-content p {
-            margin: 1rem 0;
-            color: #bbb;
-        }
-
-        .social-icons {
-            margin: 1.5rem 0;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            margin: 0 10px;
-            color: #fff;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #f8bf3c;
-        }
-
-        @media screen and (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .timeline::after {
-                left: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item::after {
-                left: 15px;
-            }
-
-            .timeline-item:nth-child(even)::after {
-                left: 15px;
-            }
-        }
+        
     </style>
 </head>
 <body>
@@ -341,34 +14,36 @@
         <nav>
             <a href="#home" class="logo">Arnold Schwarzenegger</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#bodybuilding">Bodybuilding</a></li>
-                <li><a href="#acting">Acting</a></li>
-                <li><a href="#politics">Politics</a></li>
-                <li><a href="#personal">Personal Life</a></li>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#bodybuilding">bodybuilding</a></li>
+                <li><a href="#acting">Cinéma</a></li>
+                <li><a href="#politics">Politique</a></li>
+                <li><a href="#personal">Vie personnelle</a></li>
+                <li><a href="Thanks.html">Remerciement</a></li>
+
             </ul>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <h1>Arnold Schwarzenegger</h1>
-        <p>From Austrian bodybuilder to Hollywood superstar to California Governor - explore the extraordinary life journey of one of the most iconic figures of our time.</p>
-        <a href="#bodybuilding" class="cta-button">Explore Biography</a>
+        <p>De culturiste autrichien à superstar hollywoodienne puis gouverneur de Californie – découvrez le parcours extraordinaire de l'une des figures les plus emblématiques de notre époque.</p>
+        <a href="#bodybuilding" class="cta-button">Explorer la biographie</a>
     </section>
 
     <section id="bodybuilding" class="bio-section">
         <div class="container">
-            <h2 class="section-title">Bodybuilding Career</h2>
+            <h2 class="section-title">Carrière de culturiste</h2>
             <div class="bio-content">
                 <div class="bio-image" onclick="location.href='bodybuilding.html'">
-                    <img src="/api/placeholder/600/400" alt="Arnold Schwarzenegger bodybuilding">
+                    <img src="/api/placeholder/600/400" alt="Arnold Schwarzenegger en culturisme">
                 </div>
                 <div class="bio-text">
-                    <h3>The Austrian Oak</h3>
-                    <p>Born in Thal, Austria on July 30, 1947, Arnold Schwarzenegger began weight training at the age of 15. By age 20, he was dominating bodybuilding competitions and won the title of Mr. Universe in 1967, becoming the youngest ever to win the prestigious competition.</p>
-                    <p>Throughout his bodybuilding career, Schwarzenegger won the Mr. Olympia contest seven times (1970-1975, 1980) and the Mr. Universe title five times. His rivalry with fellow bodybuilder Lou Ferrigno was later dramatized in the documentary "Pumping Iron" (1977), which helped bring bodybuilding into the mainstream.</p>
-                    <p>Schwarzenegger's revolutionary training techniques, charismatic personality, and unprecedented physique forever changed the sport of bodybuilding. His book "The Encyclopedia of Modern Bodybuilding" remains a definitive resource for bodybuilders worldwide.</p>
-                    <a href="bodybuilding.html" class="read-more">Read more about his bodybuilding career</a>
+                    <h3>Le Chêne Autrichien</h3>
+                    <p>Né à Thal, en Autriche, le 30 juillet 1947, Arnold Schwarzenegger commence la musculation à l'âge de 15 ans. À 20 ans, il domine les compétitions de culturisme et remporte le titre de Mr. Universe en 1967, devenant le plus jeune vainqueur de cette prestigieuse compétition.</p>
+                    <p>Tout au long de sa carrière de culturiste, Schwarzenegger remporte sept fois le concours Mr. Olympia (de 1970 à 1975, puis en 1980) et cinq fois le titre de Mr. Universe. Sa rivalité avec Lou Ferrigno est ensuite immortalisée dans le documentaire "Pumping Iron" (1977), qui contribue à populariser le culturisme auprès du grand public.</p>
+                    <p>Les techniques d'entraînement révolutionnaires de Schwarzenegger, sa personnalité charismatique et son physique exceptionnel ont transformé à jamais le monde du culturisme. Son livre "L'Encyclopédie moderne du culturisme" reste une référence incontournable pour les bodybuilders du monde entier.</p>
+                    <a href="bodybuilding.html" class="read-more">En savoir plus sur sa carrière de culturiste</a>
                 </div>
             </div>
         </div>
@@ -376,17 +51,17 @@
 
     <section id="acting" class="bio-section">
         <div class="container">
-            <h2 class="section-title">Hollywood Career</h2>
+            <h2 class="section-title">Carrière à Hollywood</h2>
             <div class="bio-content">
                 <div class="bio-text">
-                    <h3>From Bodybuilder to Action Star</h3>
-                    <p>Schwarzenegger's breakthrough in Hollywood came with "Conan the Barbarian" (1982), but it was his iconic role as the Terminator in James Cameron's 1984 sci-fi classic that cemented his status as an action star. The phrase "I'll be back" became one of the most quoted movie lines in film history.</p>
-                    <p>Throughout the 1980s and 1990s, Schwarzenegger dominated the box office with hits like "Predator" (1987), "Total Recall" (1990), "Terminator 2: Judgment Day" (1991), and "True Lies" (1994). He also showed his versatility with comedic roles in films like "Twins" (1988) and "Kindergarten Cop" (1990).</p>
-                    <p>Despite critics initially doubting his acting abilities due to his accent and physique, Schwarzenegger became one of Hollywood's highest-paid actors and a global cultural icon. His films have grossed more than $4 billion worldwide, and he continues to appear in major productions.</p>
-                    <a href="acting.html" class="read-more">Read more about his film career</a>
+                    <h3>De culturiste à star du cinéma</h3>
+                    <p>Schwarzenegger perce à Hollywood grâce à "Conan le Barbare" (1982), mais c’est son rôle emblématique de Terminator dans le classique de science-fiction réalisé par James Cameron en 1984 qui l’impose comme une star mondiale du cinéma d’action. La phrase "I'll be back" devient l'une des répliques les plus célèbres du cinéma.</p>
+                    <p>Dans les années 1980 et 1990, Schwarzenegger domine le box-office avec des succès tels que "Predator" (1987), "Total Recall" (1990), "Terminator 2 : Le Jugement dernier" (1991) et "True Lies" (1994). Il montre aussi sa capacité à jouer dans des comédies comme "Jumeaux" (1988) et "Un flic à la maternelle" (1990).</p>
+                    <p>Bien que son accent et son physique aient suscité des doutes au début, Schwarzenegger devient l'un des acteurs les mieux payés d'Hollywood et une icône culturelle mondiale. Ses films ont rapporté plus de 4 milliards de dollars dans le monde, et il continue d’apparaître dans des productions majeures.</p>
+                    <a href="acting.html" class="read-more">En savoir plus sur sa carrière cinématographique</a>
                 </div>
                 <div class="bio-image" onclick="location.href='acting.html'">
-                    <img src="/api/placeholder/600/400" alt="Arnold Schwarzenegger in Terminator">
+                    <img src="/api/placeholder/600/400" alt="Arnold Schwarzenegger dans Terminator">
                 </div>
             </div>
         </div>
@@ -394,17 +69,17 @@
 
     <section id="politics" class="bio-section">
         <div class="container">
-            <h2 class="section-title">Political Career</h2>
+            <h2 class="section-title">Carrière politique</h2>
             <div class="bio-content">
                 <div class="bio-image" onclick="location.href='politics.html'">
-                    <img src="/api/placeholder/600/400" alt="Governor Schwarzenegger">
+                    <img src="/api/placeholder/600/400" alt="Gouverneur Schwarzenegger">
                 </div>
                 <div class="bio-text">
-                    <h3>The Governator</h3>
-                    <p>In a surprising career pivot, Schwarzenegger announced his candidacy for Governor of California in the 2003 recall election. Running as a Republican with moderate views, he won the election and was sworn in as the 38th Governor of California on November 17, 2003.</p>
-                    <p>During his two terms as governor (2003-2011), Schwarzenegger focused on environmental issues, healthcare reform, and infrastructure improvement. He signed the Global Warming Solutions Act of 2006, establishing the first comprehensive greenhouse gas regulation program in the United States, and pushed for healthcare reform in the state.</p>
-                    <p>Despite facing challenges including budget deficits and the 2008 financial crisis, Schwarzenegger maintained relatively high approval ratings. After leaving office in 2011, he has remained politically active, particularly on environmental issues and political reform.</p>
-                    <a href="politics.html" class="read-more">Read more about his political career</a>
+                    <h3>Le Gouvernator</h3>
+                    <p>Dans un tournant inattendu, Schwarzenegger annonce sa candidature au poste de gouverneur de Californie lors de l’élection de rappel de 2003. Se présentant comme un Républicain modéré, il remporte l’élection et devient le 38ᵉ gouverneur de Californie le 17 novembre 2003.</p>
+                    <p>Durant ses deux mandats (2003-2011), Schwarzenegger se concentre sur l’environnement, la réforme du système de santé et l'amélioration des infrastructures. Il signe la loi Global Warming Solutions Act de 2006, établissant le premier programme de régulation des gaz à effet de serre aux États-Unis, et défend la réforme du système de santé.</p>
+                    <p>Malgré des défis tels que les déficits budgétaires et la crise financière de 2008, Schwarzenegger maintient des taux d'approbation relativement élevés. Après avoir quitté ses fonctions en 2011, il reste politiquement actif, notamment sur les questions environnementales et de réforme électorale.</p>
+                    <a href="politics.html" class="read-more">En savoir plus sur sa carrière politique</a>
                 </div>
             </div>
         </div>
@@ -412,17 +87,17 @@
 
     <section id="personal" class="bio-section">
         <div class="container">
-            <h2 class="section-title">Personal Life</h2>
+            <h2 class="section-title">Vie personnelle</h2>
             <div class="bio-content">
                 <div class="bio-text">
-                    <h3>Family and Philanthropy</h3>
-                    <p>Schwarzenegger married television journalist Maria Shriver, niece of President John F. Kennedy, in 1986. The couple had four children together before separating in 2011. Schwarzenegger later acknowledged that he had fathered a child with a household employee, which led to their divorce.</p>
-                    <p>Throughout his life, Schwarzenegger has been involved in numerous philanthropic efforts. He has served as chairman of the President's Council on Physical Fitness and Sports, has been a prominent Special Olympics supporter, and founded the After-School All-Stars program, which provides comprehensive after-school programs for children in need.</p>
-                    <p>In recent years, Schwarzenegger has focused on environmental activism, promoting fitness, and supporting various charitable causes. He regularly shares fitness advice and political commentary through social media platforms and his newsletter.</p>
-                    <a href="personal.html" class="read-more">Read more about his personal life</a>
+                    <h3>Famille et philanthropie</h3>
+                    <p>Schwarzenegger épouse la journaliste Maria Shriver, nièce du président John F. Kennedy, en 1986. Ensemble, ils ont quatre enfants avant de se séparer en 2011. Schwarzenegger reconnaît ensuite avoir eu un enfant avec une employée de maison, ce qui conduit à leur divorce.</p>
+                    <p>Tout au long de sa vie, Schwarzenegger est engagé dans de nombreuses causes philanthropiques. Il a présidé le President's Council on Physical Fitness and Sports, soutenu activement les Special Olympics, et fondé le programme After-School All-Stars pour aider les enfants défavorisés après l’école.</p>
+                    <p>Ces dernières années, il se concentre sur l'activisme environnemental, la promotion de la forme physique et le soutien à diverses causes caritatives. Il partage régulièrement des conseils sur la santé et la politique via ses réseaux sociaux et sa newsletter.</p>
+                    <a href="personal.html" class="read-more">En savoir plus sur sa vie personnelle</a>
                 </div>
                 <div class="bio-image" onclick="location.href='personal.html'">
-                    <img src="/api/placeholder/600/400" alt="Arnold Schwarzenegger family">
+                    <img src="/api/placeholder/600/400" alt="Famille d'Arnold Schwarzenegger">
                 </div>
             </div>
         </div>
@@ -430,66 +105,66 @@
 
     <section class="bio-section">
         <div class="container">
-            <h2 class="section-title">Timeline</h2>
+            <h2 class="section-title">Chronologie</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>1947</h3>
-                        <p>Born in Thal, Austria on July 30</p>
+                        <p>Naissance à Thal, en Autriche, le 30 juillet</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>1967</h3>
-                        <p>Becomes the youngest Mr. Universe at age 20</p>
+                        <p>Devient le plus jeune Mr. Universe à 20 ans</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>1968</h3>
-                        <p>Moves to the United States</p>
+                        <p>Emménage aux États-Unis</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>1970-1975</h3>
-                        <p>Wins Mr. Olympia six consecutive times</p>
+                        <p>Remporte six titres consécutifs de Mr. Olympia</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>1977</h3>
-                        <p>Featured in the documentary "Pumping Iron"</p>
+                        <p>Apparaît dans le documentaire "Pumping Iron"</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>1984</h3>
-                        <p>Stars in "The Terminator"</p>
+                        <p>Vedette dans "The Terminator"</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>1986</h3>
-                        <p>Marries Maria Shriver</p>
+                        <p>Épouse Maria Shriver</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>2003</h3>
-                        <p>Elected as Governor of California</p>
+                        <p>Élu gouverneur de Californie</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>2011</h3>
-                        <p>Completes second term as Governor</p>
+                        <p>Achève son second mandat de gouverneur</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>2012-Present</h3>
-                        <p>Returns to acting and focuses on environmental activism</p>
+                        <h3>2012-présent</h3>
+                        <p>Retour au cinéma et engagement dans l'activisme environnemental</p>
                     </div>
                 </div>
             </div>
@@ -498,35 +173,18 @@
 
     <footer>
         <div class="footer-content">
-            <h3>Arnold Schwarzenegger Biography</h3>
-            <p>Explore the extraordinary life of Arnold Schwarzenegger - from bodybuilder to movie star to politician.</p>
+            <h3>Biographie d'Arnold Schwarzenegger</h3>
+            <p>Découvrez la vie extraordinaire d'Arnold Schwarzenegger – de culturiste à star de cinéma en passant par gouverneur.</p>
             <div class="social-icons">
                 <a href="#">Twitter</a>
                 <a href="#">Facebook</a>
                 <a href="#">Instagram</a>
                 <a href="#">YouTube</a>
             </div>
-            <p>&copy; 2025 Arnold Schwarzenegger Biography. All rights reserved.</p>
+            <p>&copy; 2025 Biographie d'Arnold Schwarzenegger. Tous droits réservés.</p>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
