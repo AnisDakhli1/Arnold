@@ -134,3 +134,23 @@ const animateTimeline = function() {
 
 // Initialize the timeline animation
 animateTimeline();
+// Dans script.js
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        if(this.getAttribute('href').startsWith('index.html')) {
+            // Si le lien pointe vers l'accueil, laisser le comportement par défaut
+            return true;
+        }
+        
+        if(this.hash) {
+            e.preventDefault();
+            const target = document.querySelector(this.hash);
+            if(target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});

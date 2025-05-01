@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Biographie d'Arnold Schwarzenegger</title>
+    <title>Vie personnelle - Arnold Schwarzenegger</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -14,21 +14,94 @@
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="Gallery.html">Gallery</a></li>
-                <li><a href="#bodybuilding">bodybuilding</a></li>
-                <li><a href="#acting">Cinéma</a></li>
-                <li><a href="#politics">Politique</a></li>
-                <li><a href="#personal">Vie personnelle</a></li>
+                <li><a href="index.html#bodybuilding">bodybuilding</a></li>
+                <li><a href="index.html#acting">Cinéma</a></li>
+                <li><a href="index.html#politics">Politique</a></li>
+                <li><a href="index.html#personal">Vie personnelle</a></li>
                 <li><a href="Thanks.html">Remerciement</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="nothing"></div>
+    <section id="personal" class="bio-section">
+        <div class="container">
+            <h2 class="section-title">Vie Personnelle</h2>
+
+            <!-- Section Enfance -->
+            <div class="bio-content">
+                <div class="bio-image">
+                    <img src="image/thal-autriche.webp" alt="Thal, village natal d'Arnold">
+                </div>
+                <div class="bio-text">
+                    <h3>Racines Autrichiennes</h3>
+                    <p>Né le 30 juillet 1947 à Thal, petit village près de Graz en Autriche, Arnold Alois Schwarzenegger grandit dans un environnement modeste et rigoriste.</p>
+                    
+                    <div class="family-details">
+                        <div class="parent-card">
+                            <h4><i class="fas fa-male"></i> Gustav Schwarzenegger</h4>
+                            <p>Père - Ancien officier de l'armée autrichienne<br>Membre du parti nazi</p>
+                        </div>
+                        <div class="parent-card">
+                            <h4><i class="fas fa-female"></i> Aurelia Jadrny</h4>
+                            <p>Mère - Femme au foyer<br>Décédée en 1998</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-quote">
+                        <p>"C'est dans le sous-sol glacial de notre maison que j'ai commencé à m'entraîner avec des haltères rouillés. Chaque répétition était une révolte contre mon destin."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Rêve Américain -->
+            <div class="bio-content reverse">
+                <div class="bio-text">
+                    <h3>Du Bodybuilding au Rêve Américain</h3>
+                    <p>À 15 ans, sa découverte fortuite d'un magazine de bodybuilding dans un club sportif local devient une révélation. Malgré :</p>
+                    
+                    <ul class="challenge-list">
+                        <li><i class="fas fa-times-circle"></i> L'opposition familiale initiale</li>
+                        <li><i class="fas fa-euro-sign"></i> Des moyens financiers limités</li>
+                        <li><i class="fas fa-dumbbell"></i> Un équipement rudimentaire</li>
+                    </ul>
+
+                    <p>Arnold développe une discipline légendaire, s'entraînant 6h/jour tout en travaillant comme apprenti électricien.</p>
+                </div>
+                <div class="bio-image">
+                    <img src="image/young-training.jpg" alt="Jeune Arnold s'entraînant">
+                </div>
+            </div>
+
+            <!-- Section Héritage -->
+            <div class="bio-content legacy-section">
+                <div class="bio-image">
+                    <img src="image/arnold-now.webp" alt="Arnold aujourd'hui">
+                </div>
+                <div class="bio-text">
+                    <h3>Héritage et Transformation</h3>
+                    <div class="comparison-grid">
+                        <div class="comparison-item austria">
+                            <h4>Arnold 1965</h4>
+                            <p>Jeune autrichien inconnu<br>Poids : 85 kg</p>
+                        </div>
+                        <div class="comparison-arrow">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </div>
+                        <div class="comparison-item usa">
+                            <h4>Arnold 2023</h4>
+                            <p>Icône mondiale<br>Poids : 105 kg</p>
+                        </div>
+                    </div>
+                    <p>Cette métamorphose physique et sociale symbolise le pouvoir de la persévérance et de l'ambition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-content">
             <h3 class="realisation">JEBALIA Achraf DM 21</h3>
-            <p>Découvrez la vie extraordinaire d'Arnold Schwarzenegger – de bodybuiding à star de cinéma en passant par gouverneur.</p>
+            <p>Découvrez la vie extraordinaire d'Arnold Schwarzenegger</p>
             <div class="social-icons">
                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -38,5 +111,7 @@
             <p>&copy; 2025 Biographie d'Arnold Schwarzenegger. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
